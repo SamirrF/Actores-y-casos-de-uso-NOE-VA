@@ -1,0 +1,21 @@
+
+Código para crear Diagrama de CU en PlantUML:
+
+@startuml
+!theme mars
+actor "Encargado de Atención" as EA #yellow
+
+usecase (1. Consultar Evento a Realizar) as CEV
+usecase (2. Consultar Disponibilidad de Vajilla y Precios) as CDVP
+usecase (3. Registrar Alquiler de Vajilla) as RAV
+usecase (4. Consultar Cliente Existente) as CCE
+usecase (5. Registrar Nuevo Cliente) as RNC
+usecase (6. Registrar Pago de Seña) as RPS
+
+EA --> CEV
+EA --> CDVP
+EA --> RAV
+RAV --> CCE : <<include>>
+CCE <|-- RNC : <<extends>>
+EA --> RPS
+@enduml
