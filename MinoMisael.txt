@@ -1,7 +1,7 @@
 @startuml
 
 
-actor "Encargado de atención" as encargadoAtencion
+actor "Encargado de atención" as EA
 actor "Web service bancario" as wsBanco
 
 usecase "Registrar pago final" as regPagoFinal
@@ -12,14 +12,14 @@ usecase "Consultar vajilla dañada" as consVajilla
 usecase "Consultar calificación del cliente" as consCaliClte
 usecase "Emitir factura" as emitirFactura
 
-encargadoAtencion -> regPagoFinal
+EA -> regPagoFinal
 regPagoFinal <|.. apliDctoClte: <<extends>>
 regPagoFinal <|.. soliPmsoTarjeta: <<extends>>
 okPagoTjta <|.. soliPmsoTarjeta: <<include>>
 wsBanco --> okPagoTjta
-encargadoAtencion --> consVajilla
-encargadoAtencion ---> consCaliClte
-encargadoAtencion --> emitirFactura
+EA --> consVajilla
+EA ---> consCaliClte
+EA --> emitirFactura
 
 
 
