@@ -1,0 +1,18 @@
+ENCARGADO DE PEDIDO: SAMIR
+16. Registrar Pedido preparado: El sistema permite al responsable de pedido marcar los pedidos como "armados"
+una vez que están listos para su entrega.
+17. Consultar Pedidos Disponibles: El sistema muestra los pedidos pendientes de armado, entrega o devolución. 
+Registrar pedido arma se relaciona con este: Consultar Pedidos Disponibles, con un include
+18. Registrar Entrega de Pedido: El responsable registra la entrega del pedido en el domicilio del cliente.
+19. Gestionar Devolución de Pedido: Una vez que la empresa retira la vajilla del domicilio del cliente,
+se registra la devolución en el sistema.
+
+
+Scrips PlantUML
+
+actor "Encargado de Pedido" as EncPedido
+EncPedido --> (16. Registrar Pedido preparado)
+EncPedido --> (17. Consultar Pedidos Disponibles)
+EncPedido --> (18. Registrar Entrega de Pedido)
+EncPedido --> (19. Gestionar Devolución de Pedido)
+(16. Registrar Pedido preparado) --> (17. Consultar Pedidos Disponibles) : include
