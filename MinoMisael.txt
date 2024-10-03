@@ -1,0 +1,26 @@
+@startuml
+
+
+actor "Encargado de atención" as encargadoAtencion
+actor "Web service bancario" as wsBanco
+
+usecase "Registrar pago final" as regPagoFinal
+usecase "Aplicar descuento al cliente" as apliDctoClte
+usecase "Solicitar permiso para autorizar pago con tarjeta" as soliPmsoTarjeta
+usecase "Autorizar pago con tarjeta" as okPagoTjta
+usecase "Consultar vajilla dañada" as consVajilla
+usecase "Consultar calificación del cliente" as consCaliClte
+usecase "Emitir factura" as emitirFactura
+
+encargadoAtencion -> regPagoFinal
+regPagoFinal <|.. apliDctoClte: <<extends>>
+regPagoFinal <|.. soliPmsoTarjeta: <<extends>>
+okPagoTjta <|.. soliPmsoTarjeta: <<include>>
+wsBanco --> okPagoTjta
+encargadoAtencion --> consVajilla
+encargadoAtencion ---> consCaliClte
+encargadoAtencion --> emitirFactura
+
+
+
+@enduml
