@@ -1,1 +1,17 @@
-Test commit
+ENCARGADO DE CONTROL:
+14. Registrar Devolución de Vajilla: El encargado registra en el sistema la cantidad y
+ el estado de las piezas devueltas por el cliente.
+15. Registrar Vajilla Dañada: En caso de daños, el encargado registra las piezas dañadas
+ o en desuso y el sistema lo asocia al pedido.
+
+SCRIPT PlantUML
+@startuml
+actor "Encargado de Control" as Encargado 
+
+usecase "Registrar Devolución de Vajilla" as devolucionvajilla 
+usecase "Registrar Vajilla Dañada" as dañada
+ 
+Encargado --> devolucionvajilla
+Encargado --> dañada
+
+@enduml
