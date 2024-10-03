@@ -1,0 +1,7 @@
+@startuml
+actor "Encargado de Calificación (Dueño)" as Dueño #yellow
+
+usecase (13. Registrar Calificación del Cliente) as RCC
+
+Dueño --> RCC
+@enduml
